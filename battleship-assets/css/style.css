@@ -156,6 +156,11 @@ html .body-game{
 .overlay{
   z-index: 7;
 }
+.alert{
+  display: none;
+  position: absolute;
+  top:0px;
+}
 image{
   z-index: -1;
 }
@@ -269,7 +274,7 @@ image{
     padding:0;
     height: 50px;
     margin:0;
-    margin-left: 20%;
+    margin-left: 16%;
     margin-top:12px;
     margin-bottom: 20px;
 }
@@ -278,7 +283,8 @@ image{
   top:20px;
   height: 50px;
   margin:0;
-  margin-left: 27%;
+  margin-right: 27%;
+  margin-left: 9%;
   margin-top:12px;
   margin-bottom: 20px;
 }

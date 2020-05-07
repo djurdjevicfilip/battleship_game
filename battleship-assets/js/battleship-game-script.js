@@ -181,6 +181,7 @@ function updateShipCounter(shipsLeft,sh,num){
 var waiting=false;
 var hitShips1=[];
 var hitShips2=[];
+var win=false;
 //Try to hit a ship on mouse pressed
 function mousePressed(){
     if(currBackground==""&&waiting==false){
@@ -223,6 +224,7 @@ function mousePressed(){
                     }
                 }
             }
+
             if(shipHit!=null){
                 if(currPlayer==player2){
                     hitShips1.push(shipHit);
@@ -238,9 +240,21 @@ function mousePressed(){
                     var comp=shipHit.components[j];
                     document.getElementById(comp.id).style.opacity=0.8;
                 }
+                
+                 $('.alert').text('You\'ve sunk a boat!');
+            }else{
+                 $('.alert').text('You hit a boat!');
+            }
+            if(hitShips1.length==10){
+                $('.alert').text('Player 2 has won! Player 1 has sunk'+hitShips2.length+' ships');
+                win=true;
+            }
+            if(hitShips2.length==10){
+                $('.alert').text('Player 1 has won! Player 2 has sunk'+hitShips1.length+' ships');
+                win=true;
             }
             showHitImages();
-
+            
         }
         else{
             
@@ -253,14 +267,32 @@ function mousePressed(){
             waiting=true;
 
             //Wait for a second to switch the players
-            sleep(1000).then(() => {
+            sleep(1500).then(() => {
             waiting=false;
              switchPlayers();
             });
+            
+            $('.alert').text('Oh no! You missed!');
         }
 
         }
-        
+        if(win){
+            
+            $('.alert').css('z-index','50');
+            $('.alert').css('width','100%');
+            $('.alert').css('height','100%');
+            $('.alert').css('padding-top','25%');
+            $('.alert').css('text-align','center');
+            $('.alert').css('font-size','50px');
+        }
+        $('.alert').show();
+        sleep(1500).then(() => {
+            $('.alert').hide();
+            if(win){
+                $('.alert').show();
+
+            }
+        });
 }
 function mouseReleased(){
    
@@ -469,6 +501,7 @@ function initPlayers(p1,p2){
 }
 //Called once
 function setupGame(){
+
     start=100;
     headingTextSize=83;
     end=start+size;
@@ -533,6 +566,8 @@ function setShipCount(num1,num2){
 
     }
 }
+$(document).ready(function(){
+});
 var canvas;
 var ctx;
 var ctx3;
