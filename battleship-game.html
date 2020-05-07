@@ -1,0 +1,82 @@
+
+<html>
+    <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' media='screen' href='battleship-assets/css/style.css'>
+    <div class="row">
+       
+    <h1 class="display-4 heading-game1" id="hd1"></h1>
+    <h1 class="display-4 heading-game2"id="hd2"></h1>
+    </div>
+   
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+      
+    <script type="text/javascript" src="battleship-assets/js/battleship-game-script.js"></script>
+  
+</head>
+<canvas id="myCanvas2" width="700" height="700">
+</canvas>
+
+<canvas id="myCanvas3" width="700" height="700">
+</canvas>
+
+<canvas id="gridCanvas" width="700" height="700">
+</canvas>
+    <body id="bodyId" class="body-game"onload="setupGame()" onmousemove="mouseReleased()">
+      
+      <div class="form-game1">
+        <h2 style="text-align: center;">Ships left: </h2>
+           
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <b>Size 4</b><img class="img4"src="battleship-assets/img/warship4.png">
+                  <span id="1cnt4"class="badge badge-primary badge-pill">1</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <b>Size 3 </b><img class="img3"src="battleship-assets/img/warship3.png">
+                  <span id="1cnt3"class="badge badge-primary badge-pill">2</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                 <b> Size 2</b> <img class="img2"src="battleship-assets/img/warship2.png">
+                  <span id="1cnt2"class="badge badge-primary badge-pill">3</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <b>Size 1 </b><img class="img1"src="battleship-assets/img/warship1a.png">
+                    <span id="1cnt1"class="badge badge-primary badge-pill">4</span>
+                  </li>
+              </ul>
+        <div class="row">
+            <button class="btn btn-primary"onclick="reset()">Save</button>
+        </div>
+    </div>
+    <div class="form-game2">
+      <h2 style="text-align: center;">Ships left: </h2>
+         
+          <ul class="list-group">
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <b>Size 4</b><img class="img4"src="battleship-assets/img/warship4.png">
+                <span id="2cnt4"class="badge badge-primary badge-pill">1</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <b>Size 3 </b><img class="img3"src="battleship-assets/img/warship3.png">
+                <span id="2cnt3"class="badge badge-primary badge-pill">2</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+               <b> Size 2</b> <img class="img2"src="battleship-assets/img/warship2.png">
+                <span id="2cnt2"class="badge badge-primary badge-pill">3</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <b>Size 1 </b><img class="img1"src="battleship-assets/img/warship1a.png">
+                  <span id="2cnt1"class="badge badge-primary badge-pill">4</span>
+                </li>
+            </ul>
+      <div class="row">
+          <button class="btn btn-primary"onclick="reset()">Save</button>
+      </div>
+  </div>
+    </body>
+
+ 
+</html>
